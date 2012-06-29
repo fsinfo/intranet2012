@@ -1,0 +1,14 @@
+<html>
+	<body>
+		{% if error %}
+			<p class="error">
+				{{error}}
+			</p>
+		{% endif %}
+		<form method="post">
+			<input type="edit" name="username" />
+			<input type="password" name="password" />
+			<input type="submit" />
+		</form>
+	</body>
+</html>
