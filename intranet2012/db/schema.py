@@ -38,9 +38,9 @@ beverage_category = Table('beverage_category', schema,
 
 beverage_item = Table('beverage_item', schema,
                       Column('item_id', Integer, primary_key = True),
-                      Column('category_id', Integer, ForeignKey('beverage_category.category_id'), nullable = True))
+                      Column('category_id', Integer, ForeignKey('beverage_category.category_id'), nullable = True),
                       Column('name', String(32), nullable = False),
-                      Column('unit', String(32), nullable = True)) # Amount of said beverage to be sold per price… … penis
+                      Column('unit', String(32), nullable = True)) # Amount of said beverage to be sold per price
 
 beverage_prices_list = Table('beverage_prices_list', schema,
                              Column('list_id', Integer, primary_key = True),
@@ -50,8 +50,8 @@ beverage_prices_list = Table('beverage_prices_list', schema,
 beverage_prices_item = Table('beverage_prices_item', schema,
                              Column('item_id', Integer, ForeignKey('beverage_item.item_id'), nullable = False),
                              Column('list_id', Integer, ForeignKey('beverage_prices_list.list_id'), nullable = False),
-                             Column('internal_price', Decimal(6, 2), nullable=False),
-                             Column('external_price', Decimal(6, 2), nullable=False))
+                             Column('internal_price', Numeric(6, 2), nullable=False),
+                             Column('external_price', Numeric(6, 2), nullable=False))
 
 beverage_tap = Table('beverage_tap', schema,
                      Column('tap_id', Integer, primary_key = True),
